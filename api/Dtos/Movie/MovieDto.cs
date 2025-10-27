@@ -14,7 +14,7 @@ namespace api.Dtos.Movie
         public string? Description { get; set; }
         public string? PosterUrl { get; set; }
         public int Duration { get; set; }
-        public List<GenreDto>? Genres { get; set; }
-        public List<ScreeningDto>? Screenings { get; set; }
+        public List<GenreDto> Genres { get; set; } = new();
+        public List<ScreeningDto> Screenings { get; set; } = new();
     }
 }

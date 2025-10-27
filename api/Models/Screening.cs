@@ -23,9 +23,9 @@ namespace api.Models
         [Required]
         public decimal Price { get; set; }
         [ForeignKey(nameof(MovieId))]
-        public Movie Movie { get; set; }
+        public Movie Movie { get; set; } = null!;
         [ForeignKey(nameof(RoomId))]
-        public Room Room { get; set; }
+        public Room Room { get; set; } = null!;
         public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
     }
 }

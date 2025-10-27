@@ -14,6 +14,6 @@ namespace api.Dtos.Room
 
     public class RoomWithSeatsDto : RoomDto
     {
-        public List<SeatDto>? Seats { get; set; }
+        public List<SeatDto> Seats { get; set; } = new();
     }
 }

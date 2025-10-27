@@ -12,7 +12,7 @@ namespace api.Dtos.Reservation
         public int Id { get; set; }
         public required string UserId { get; set; }
         public int ScreeningId { get; set; }
-        public ReservationStatus Status { get; set; } = ReservationStatus.Reserved;
-        public List<SeatDto>? Seats { get; set; }
+        public ReservationStatus Status { get; set; }
+        public List<SeatDto> Seats { get; set; } = new();
     }
 }

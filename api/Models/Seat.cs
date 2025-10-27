@@ -19,7 +19,7 @@ namespace api.Models
         public int Number { get; set; }
         public SeatType Type { get; set; } = SeatType.Single;
         [ForeignKey(nameof(RoomId))]
-        public Room Room { get; set; }
+        public Room Room { get; set; } = null!;
     }
 
     public enum SeatType

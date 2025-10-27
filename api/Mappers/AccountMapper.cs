@@ -11,9 +11,10 @@ namespace api.Mappers
     {
         public static AccountDto ToAccountDto(this User userModel)
         {
+            var userName = userModel.UserName ?? throw new InvalidOperationException("User record missing username.");
             return new AccountDto
             {
-                UserName = userModel.UserName,
+                UserName = userName,
                 FirstName = userModel.FirstName,
                 LastName = userModel.LastName
             };

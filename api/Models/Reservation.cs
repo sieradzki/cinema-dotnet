@@ -21,9 +21,9 @@ namespace api.Models
         public ICollection<Seat> Seats { get; set; } = new List<Seat>();
 
         [ForeignKey(nameof(UserId))]
-        public User User { get; set; }
+        public User User { get; set; } = null!;
         [ForeignKey(nameof(ScreeningId))]
-        public Screening Screening { get; set; }
+        public Screening Screening { get; set; } = null!;
     }
 
     public enum ReservationStatus

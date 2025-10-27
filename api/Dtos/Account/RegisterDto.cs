@@ -10,19 +10,19 @@ namespace api.Dtos.Account
     {
         [Required]
         [MaxLength(64)]
-        public string? Username { get; set; }
+        public string Username { get; set; } = string.Empty;
         [Required]
         [EmailAddress]
         [MaxLength(256)]
-        public string? Email { get; set; }
+        public string Email { get; set; } = string.Empty;
         [Required]
         [MaxLength(128)]
-        public string? Password { get; set; }
+        public string Password { get; set; } = string.Empty;
         [Required]
         [MaxLength(64)]
-        public required string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
         [Required]
         [MaxLength(64)]
-        public required string LastName { get; set; }
+        public string LastName { get; set; } = string.Empty;
     }
 }

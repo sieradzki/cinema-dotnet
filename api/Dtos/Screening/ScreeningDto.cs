@@ -17,6 +17,6 @@ namespace api.Dtos.Screening
 
     public class ScreeningWithReservationsDto : ScreeningDto
     {
-        public List<ReservationDto>? Reservations { get; set; } 
+        public List<ReservationDto> Reservations { get; set; } = new();
     }
 }

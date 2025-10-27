@@ -80,12 +80,14 @@ namespace api.Controllers
             if (!result.Succeeded) return Unauthorized("Email not found or password incorrect!");
 
             var userRoles = await _userManager.GetRolesAsync(user);
+            var userName = user.UserName ?? throw new InvalidOperationException("User record missing username.");
+            var email = user.Email ?? throw new InvalidOperationException("User record missing email.");
 
             return Ok(
                 new NewUserDto
                 {
-                    UserName = user.UserName,
-                    Email = user.Email,
+                    UserName = userName,
+                    Email = email,
                     FirstName = user.FirstName,
                     LastName = user.LastName,
                     Token = _tokenService.CreateToken(user, userRoles)
@@ -115,11 +117,13 @@ namespace api.Controllers
                     if (roleResult.Succeeded)
                     {
                         var userRoles = await _userManager.GetRolesAsync(user);
+                        var userName = user.UserName ?? throw new InvalidOperationException("User record missing username.");
+                        var email = user.Email ?? throw new InvalidOperationException("User record missing email.");
                         return Ok(
                             new NewUserDto
                             {
-                                UserName = user.UserName,
-                                Email = user.Email,
+                                UserName = userName,
+                                Email = email,
                                 FirstName = user.FirstName,
                                 LastName = user.LastName,
                                 Token = _tokenService.CreateToken(user, userRoles)
