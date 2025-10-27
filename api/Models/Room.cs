@@ -13,6 +13,7 @@ namespace api.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; } 
         [Required]
+        [MaxLength(16)]
         public required string Name { get; set; }
         public ICollection<Seat> Seats { get; set; } = new List<Seat>();
     }

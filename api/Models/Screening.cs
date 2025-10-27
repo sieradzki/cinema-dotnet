@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.Models
 {
@@ -18,7 +19,7 @@ namespace api.Models
         public int RoomId { get; set; }
         [Required]
         public int MovieId { get; set; }
-        [Column(TypeName = "decimal(6,2)")]
+        [Precision(6, 2)]
         [Required]
         public decimal Price { get; set; }
         [ForeignKey(nameof(MovieId))]

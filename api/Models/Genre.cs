@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace api.Models
 {
-    public class Genre 
+    public class Genre
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
+        [MaxLength(16)]
         public required string Name { get; set; }
     }
 }

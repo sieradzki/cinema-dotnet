@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Dtos.Genre;
 using api.Dtos.Screening;
 
-namespace api.Dtos.Genre
+namespace api.Dtos.Movie
 {
     public class MovieDto
     {

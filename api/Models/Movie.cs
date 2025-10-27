@@ -13,11 +13,14 @@ namespace api.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
+        [MaxLength(256)]
         public required string Title { get; set; }
+        [MaxLength(2048)]
         public string? Description { get; set; }
         public string? PosterUrl { get; set; }
+        [Range(1, 1000)]
         public int Duration { get; set; }
         public ICollection<Genre> Genres { get; set; } = new List<Genre>();
-        public ICollection<Screening> Screenings { get; set; } = new List<Screening>(); 
+        public ICollection<Screening> Screenings { get; set; } = new List<Screening>();
     }
 }

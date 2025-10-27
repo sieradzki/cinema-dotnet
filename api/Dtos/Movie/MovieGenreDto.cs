@@ -8,7 +8,7 @@ namespace api.Dtos.Movie
 {
     public class MovieGenreDto
     {
-        [Required(ErrorMessage = "Genre cannot be empty.")]
+        [Range(1, int.MaxValue, ErrorMessage = "GenreId must be a positive integer.")]
         public int GenreId { get; set; }
     }
 }

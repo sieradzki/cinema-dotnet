@@ -13,8 +13,9 @@ namespace api.Dtos.Movie
         public required string Title{ get; set; }
         [MaxLength(2048, ErrorMessage = "Movie description cannot be longer than 2048 characters.")]
         public string? Description { get; set; }
+        [Url]
         public string? PosterUrl { get; set; }
-        [Required(ErrorMessage = "Movie duration must be specified.")]
+        [Range(1, 1000, ErrorMessage = "Movie duration must be specified.")]
         public int Duration { get; set; }
     }
 }

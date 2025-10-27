@@ -4,16 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Models;
+using api.Validation;
 
 namespace api.Dtos.Seat
 {
     public class UpdateSeatRequestDto
     {
-        [Required(ErrorMessage = "Seat row cannot be empty.")]
+        [Range(1, int.MaxValue, ErrorMessage = "Seat row must be positive.")]
         public int Row { get; set; }
-        [Required(ErrorMessage = "Seat Number cannot be empty.")]
-        public int Number { get; set; } 
-        [EnumDataType(typeof(SeatType))]
+        [Range(1, int.MaxValue, ErrorMessage = "Seat number must be positive.")]
+        public int Number { get; set; }
+        [DefinedEnum]
         public SeatType Type { get; set; } = SeatType.Single;
     }
 }

@@ -21,7 +21,7 @@ namespace api.Mappers
             };
         }
 
-        public static ScreeningDto ToScreeningWithReservationsDto(this Screening screeningModel)
+        public static ScreeningWithReservationsDto ToScreeningWithReservationsDto(this Screening screeningModel)
         {
             return new ScreeningWithReservationsDto
             {

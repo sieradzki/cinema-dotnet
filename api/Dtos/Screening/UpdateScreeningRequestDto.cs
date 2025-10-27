@@ -10,11 +10,11 @@ namespace api.Dtos.Screening
     {
         [Required(ErrorMessage = "Screening start time cannot be empty.")]
         public DateTime TimeStart { get; set; }
-        [Required(ErrorMessage = "Screening RoomId cannot be empty.")]
+        [Range(1, int.MaxValue, ErrorMessage = "RoomId must be a positive integer.")]
         public int RoomId { get; set; }
-        [Required(ErrorMessage = "Screening MovieId cannot be empty.")]
+        [Range(1, int.MaxValue, ErrorMessage = "MovieId must be a positive integer.")]
         public int MovieId { get; set; }
-        [Required(ErrorMessage = "Screening Price cannot be empty.")]
+        [Range(0.01, 9999.99, ErrorMessage = "Price must be positive.")]
         public decimal Price { get; set; }
     }
 }
